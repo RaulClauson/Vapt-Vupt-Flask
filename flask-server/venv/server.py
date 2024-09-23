@@ -23,7 +23,7 @@ def diagnostico():
     data = request.json
     user_input = data.get('text', '')
     predict = ia.predict_problem(user_input)
-    response = {'result': 'Resposta processada para: ' + predict}
+    response = {'result': 'O problema provavelmente é: ' + predict}
     return jsonify(response)
 
 if __name__ == "__main__":

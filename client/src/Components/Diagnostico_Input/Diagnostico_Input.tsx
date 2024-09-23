@@ -67,7 +67,7 @@ const Diagnostico_Input = () => {
             </button>
           </label>
         </form>
-        {response && <p>Resposta: {response}</p>}
+        {response && <p>{response}</p>}
         <script>
           <>
           {console.log(response)}
