@@ -432,6 +432,6 @@ def predict_problem(frase):
     predicao = modelo.predict(frase_vet)
     return predicao[0]
 
-# Exemplo de uso
+""" # Exemplo de uso
 frase_teste = input("Digite seu problema: ")
-print(f'Predição: {predict_problem(frase_teste)}')
+print(f'Predição: {predict_problem(frase_teste)}') """

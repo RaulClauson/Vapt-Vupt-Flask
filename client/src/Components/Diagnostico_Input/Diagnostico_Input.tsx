@@ -68,6 +68,11 @@ const Diagnostico_Input = () => {
           </label>
         </form>
         {response && <p>Resposta: {response}</p>}
+        <script>
+          <>
+          {console.log(response)}
+          </>
+        </script>
         <p>A AI do Vapt-Vupt pode apresentar informações imprecisas. Por isso, cheque as respostas.</p>
       </div>
     </>
