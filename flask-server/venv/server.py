@@ -1,5 +1,6 @@
-from flask import Flask, send_from_directory, abort
+from flask import Flask, jsonify, request, send_from_directory, abort
 import os
+import vaptAI as ia
 
 app = Flask(__name__, static_folder='../../client/dist', template_folder='../../client/dist')
 
@@ -16,6 +17,14 @@ def static_files(path):
         return send_from_directory(app.static_folder, path)
     except FileNotFoundError:
         abort(404)
+
+@app.route('/api/diagnostico', methods=['POST'])
+def diagnostico():
+    data = request.json
+    user_input = data.get('text', '')
+    predict = ia.predict_problem(user_input)
+    response = {'result': 'O problema provavelmente é: ' + predict}
+    return jsonify(response)
 
 if __name__ == "__main__":
     app.run(debug=True)
